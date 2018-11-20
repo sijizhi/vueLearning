@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue学习</title>
+    <script src="js/vue.js"></script>
+
+    <style></style>
+
+
+
+
+
+</head>
+
+<!--TIPS-->
+<!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
+
+<body>
+    <div id="root">
+        <h1>帅帅的{{number}}</h1>
+        <input v-model="content" />
+        <div v-bind:title="title + ' 额外加的title'" @click="handleClick">{{content}}</div>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#root", //挂载点，el与id绑定。挂载点里面的内容都是模板
+            // template: '<h1>帅帅的{{msg}}</h1>', //模板实例
+            data: {
+                msg: "我在学vue，好像还不错",
+                number: 1234,
+                content: '这是一个content',
+                title: '这是一个title'
+            },
+            methods: {
+                handleClick: function() {
+                    this.content = '我已经绑定，并且替换了'
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue学习</title>
+    <script src="js/vue.js"></script>
+
+    <style></style>
+
+
+
+
+
+</head>
+
+<!--TIPS-->
+<!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
+
+<body>
+    <div id="root">
+        姓：<input v-model="firstname" /> 名：
+        <input v-model="lastname" />
+        <div>{{firstname}}{{lastname}}</div>
+        <div>{{fullname}}</div>
+        <div>{{count}}</div>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#root", //挂载点，el与id绑定。挂载点里面的内容都是模板
+            data: {
+                firstname: '',
+                lastname: '',
+                count: 0
+            },
+            computed: { //计算属性
+                fullname: function() {
+                    return this.firstname + ' ' + this.lastname;
+                }
+            },
+            watch: { //侦听器
+                fullname: function() {
+                    this.count++;
+                }
+
+            }
+        })
+    </script>
+</body>
+
+</html>

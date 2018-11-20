@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue学习</title>
+    <script src="js/vue.js"></script>
+
+    <style></style>
+
+
+
+
+
+</head>
+
+<!--TIPS-->
+<!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
+
+<body>
+    <div id="root">
+        <div v-show="show">我最帅</div>
+        <button @click="mybtn">按钮</button>
+        <ul>
+            <li v-for="(item,index) of list" :key="index">{{item}}</li>
+        </ul>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#root", //挂载点，el与id绑定。挂载点里面的内容都是模板
+            data: {
+                show: false,
+                list: [1, 1, 3, 4]
+            },
+            methods: {
+                mybtn: function() {
+                    this.show = !this.show; //相反
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
