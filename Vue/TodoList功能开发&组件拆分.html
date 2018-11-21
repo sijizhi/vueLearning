@@ -24,17 +24,13 @@
             <input v-model="inputvalue" />
             <button @click="mybtn">按钮</button>
         </div>
-
         <ul>
             <!-- 全局组件 -->
             <todo-item v-for="(item,index) of list" :key="index" :content="item" :index="index" @delete="handledelete"></todo-item>
             <!-- 局部组件 -->
             <todo-item2></todo-item2>
-
-
         </ul>
     </div>
-
     <script>
         Vue.component('todo-item', { //全局组件
             props: ['content', 'index'],
